@@ -1,14 +1,67 @@
 [
   {
     "Ticker": "EGIE3.SA",
-    "Qtd": 44
+    "Qtd": 44,
+    "Goal": 8
   },
   {
     "Ticker": "BBAS3.SA",
-    "Qtd": 41
+    "Qtd": 41,
+    "Goal": 10
   },
   {
     "Ticker": "BBSE3.SA",
-    "Qtd": 32
+    "Qtd": 32,
+    "Goal": 8
+  },
+  {
+    "Ticker": "ALUP11.SA",
+    "Qtd": 20,
+    "Goal": 8
+  },
+  {
+    "Ticker": "TAEE11.SA",
+    "Qtd": 28,
+    "Goal": 7.5
+  },
+  {
+    "Ticker": "PSSA3.SA",
+    "Qtd": 38,
+    "Goal": 7.5
+  },
+  {
+    "Ticker": "RAIZ4.SA",
+    "Qtd": 17,
+    "Goal": 6.5
+  },
+  {
+    "Ticker": "FLRY3.SA",
+    "Qtd": 43,
+    "Goal": 5
+  },
+  {
+    "Ticker": "LREN3.SA",
+    "Qtd": 25,
+    "Goal": 6.5
+  },
+  {
+    "Ticker": "BPAC11.SA",
+    "Qtd": 29,
+    "Goal": 8
+  },
+  {
+    "Ticker": "SAPR4.SA",
+    "Qtd": 116,
+    "Goal": 7
+  },
+  {
+    "Ticker": "AGRO3.SA",
+    "Qtd": 22,
+    "Goal": 8
+  },
+  {
+    "Ticker": "VIVT3.SA",
+    "Qtd": 8,
+    "Goal": 7.5
   }
 ]
