@@ -27,13 +27,13 @@ public class RentabilityRelancingService : IRentabilityRebalancingService
         var stocksDataCurrent = (await _yahooFinanceRepository.GetStocksQuotes(tickers))
             .ToArray();
 
-        var amount = CalculateAmount(stocks, stocksDataCurrent);
+        var totalPortfolioValue = CalculateTotalPortfolioValue(stocks, stocksDataCurrent);
         
         foreach (var stock in stocks)
         {
-            var currentQuote = stocksDataCurrent.First(x => x.Symbol == stock.Ticker).RegularMarketPrice;
+            var currentQuote = (decimal)stocksDataCurrent.First(x => x.Symbol == stock.Ticker).RegularMarketPrice;
             var currentValue = CalculateCurrentValueAsset(currentQuote, stock.Qtd);
-            var currentPercentage = CalculateCurrentPercent(currentValue, amount);
+            var currentPercentage = CalculateCurrentPercent(currentValue, totalPortfolioValue);
             
             yield return new StockRebalancing
             {
@@ -43,19 +43,26 @@ public class RentabilityRelancingService : IRentabilityRebalancingService
                 CurrentQuote = currentQuote,
                 CurrentPercentage = currentPercentage,
                 Goal = stock.Goal,
-                GoalDifference = (currentPercentage - stock.Goal) * currentValue
+                GoalDifference = CalculateAdjustmentDifferenceValue(totalPortfolioValue, currentValue, stock.Goal),
+                TotalPortfolioValue = totalPortfolioValue
             };
         }
     }
 
-    private double CalculateAmount(Stock[] stocksCurrent, StockQuote[] stocksQuote) =>
-        stocksCurrent.Select(x => x.Qtd * stocksQuote
+    private decimal CalculateTotalPortfolioValue(Stock[] stocksCurrent, StockQuote[] stocksQuote) =>
+        stocksCurrent.Select(x => x.Qtd * (decimal)stocksQuote
             .First(y => x.Ticker == y.Symbol).RegularMarketPrice)
             .Sum();
 
-    private static double CalculateCurrentPercent(double currentValue, double amount) =>
-        (currentValue / amount) * 100;
+    private static decimal CalculateCurrentPercent(decimal currentValue, decimal totalPortfolioValue) =>
+        (currentValue / totalPortfolioValue) * 100;
 
-    private static double CalculateCurrentValueAsset(double marketPrice, int qtdCurrent) =>
+    private static decimal CalculateCurrentValueAsset(decimal marketPrice, int qtdCurrent) =>
         marketPrice * qtdCurrent;
+
+    private static decimal CalculateAdjustmentDifferenceValue(decimal totalPortfolioValue, decimal currentValue, decimal desiredPercent)
+    {
+        var idealValue = totalPortfolioValue * (desiredPercent / 100);
+        return idealValue - currentValue;
+    }
 }

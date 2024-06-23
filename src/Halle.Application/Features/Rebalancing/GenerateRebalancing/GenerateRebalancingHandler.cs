@@ -1,4 +1,5 @@
 ﻿using Halle.Application.Dtos;
+using Halle.Domain.Enumerables;
 using Halle.Domain.Interfaces;
 using MediatR;
 
@@ -27,11 +28,13 @@ namespace Halle.Application.Features.Rebalancing.GenerateRebalancing
                     CurrentQuote = stock.CurrentQuote,
                     CurrentPercentage = stock.CurrentPercentage,
                     Goal = stock.Goal,
-                    GoalDifference = stock.GoalDifference
+                    GoalDifference = stock.GoalDifference,
+                    TotalPortfolioValue = stock.TotalPortfolioValue,
+                    Strategy = stock.GoalDifference < 0 ? StrategyType.Hold : StrategyType.Buy
                 });
             }
             
-            return stocksRebalancingMap.OrderByDescending(x => x.CurrentValue);
+            return stocksRebalancingMap.OrderBy(x => x.Ticker);
         }
     }
 }
