@@ -1,35 +1,41 @@
 # Ignore arquivos de log
 *.log
 
-# Ignorar diretórios de build
+# Ignorar diretï¿½rios de build
 bin/
 obj/
+Debug/
+DebugNet/
+DebugNetCore/
+Release/
+ReleaseNet/
+ReleaseNetCore/
 
 # Ignorar pacotes NuGet
 *.nupkg
 *.paket
 
-# Ignorar arquivos temporários
+# Ignorar arquivos temporï¿½rios
 *~
 *.swp
 *.bak
 *.cache
 
-# Ignorar arquivos de usuário específicos
+# Ignorar arquivos de usuï¿½rio especï¿½ficos
 *.suo
 *.user
 *.userosscache
 
-# Ignorar arquivos de configuração do Rider
+# Ignorar arquivos de configuraï¿½ï¿½o do Rider
 .idea/
 
-# Ignorar arquivos de configuração do Visual Studio
+# Ignorar arquivos de configuraï¿½ï¿½o do Visual Studio
 .vs/
 
-# Ignorar arquivos específicos de solução
+# Ignorar arquivos especï¿½ficos de soluï¿½ï¿½o
 *.sln.docstates
 
-# Ignorar arquivos de build específicos
+# Ignorar arquivos de build especï¿½ficos
 *.dll
 *.exe
 *.pdb
