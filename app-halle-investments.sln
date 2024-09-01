@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{14C018E4-CFA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D8C54FF2-FA68-462D-855E-EEA8D4E13CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halle.Infrastructure", "src\Halle.Infrastructure\Halle.Infrastructure.csproj", "{E70A6E4E-0A40-4139-8345-42E5A4A59FBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Halle.Infrastructure", "src\Halle.Infrastructure\Halle.Infrastructure.csproj", "{E70A6E4E-0A40-4139-8345-42E5A4A59FBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halle.Application", "src\Halle.Application\Halle.Application.csproj", "{52CECA5E-73F1-4475-BB94-14E2F71D042B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Halle.Application", "src\Halle.Application\Halle.Application.csproj", "{52CECA5E-73F1-4475-BB94-14E2F71D042B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halle.Domain", "src\Halle.Domain\Halle.Domain.csproj", "{309FAA13-FE7A-4BBA-B7C8-1A90D96541AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Halle.Domain", "src\Halle.Domain\Halle.Domain.csproj", "{309FAA13-FE7A-4BBA-B7C8-1A90D96541AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Halle.UI", "src\Halle.UI\Halle.UI.csproj", "{01280CC6-F715-49FD-B672-82D2CEDDDE88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Halle.UI", "src\Halle.UI\Halle.UI.csproj", "{01280CC6-F715-49FD-B672-82D2CEDDDE88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
